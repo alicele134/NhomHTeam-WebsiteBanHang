@@ -14,13 +14,3 @@ var khachHangSchema = new Schema(
   );
 //4. Model
   module.exports = mongoose.model('khachHang', khachHangSchema);
-
-  module.exports.create({
-    maKH: "00001",
-    tenKhachHang: "Tran Thi Thanh Hang",
-    gioiTinh: "Nu",
-    ngaySinh: '1997-01-07',
-    diaChi:"15/5 Bui The My, Tan Binh, HCM",
-    email: "thanhhang@gmail.com",
-    soDienThoai: "0123456789",
-})

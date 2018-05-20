@@ -11,7 +11,8 @@ var settings=require('./config/settings');
 var database=require('./config/database');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var catalog = require('./routes/catalog');  //Import routes for "catalog" area of site
+
 
 var app = express();
 
@@ -21,6 +22,7 @@ mongoose.connection.on('error', function(err){
 });
 
 // view engine setup
+
 var hbsConfig = expHbs.create({
   helpers: require('./helpers/handlebars.js').helpers,
     layoutsDir: path.join(__dirname, '/templates/'+ settings.defaultTemplate+ '/layouts'),
@@ -29,6 +31,8 @@ var hbsConfig = expHbs.create({
     extname:'.hbs'
 })
 
+
+// Lấy đường dẫn tới các file hbs trong template
 app.engine('.hbs', hbsConfig.engine);
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, '/templates/'+ settings.defaultTemplate));
@@ -40,7 +44,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', users);
+app.use('/catalog', catalog); 
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

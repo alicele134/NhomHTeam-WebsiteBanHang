@@ -10,8 +10,3 @@ var chiTietGioHangSchema = new Schema(
   );
 
   module.exports = mongoose.model('chiTietGioHang', chiTietGioHangSchema);
-  module.exports.create({
-    maGioHang: "0000000001",
-    soLuong: 12,
-    maSanPham: "2220111100",
-})

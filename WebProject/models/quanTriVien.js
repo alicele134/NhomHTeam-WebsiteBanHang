@@ -14,13 +14,3 @@ var quanTriVienSchema = new Schema(
   );
 
   module.exports = mongoose.model('quanTriVien', quanTriVienSchema);
-
-  module.exports.create({
-    maQTV: "10000",
-    tenquanTriVien: "Le Thi Kim Hanh",
-    gioiTinh: "Nu",
-    ngaySinh: '1997-04-13',
-    diaChi:"Nuyen Tri Phuong, Q5, HCM",
-    email: "kimhanh@gmail.com",
-    soDienThoai: "9876543210",
-})

@@ -8,7 +8,3 @@ var taiKhoanSchema = new Schema({
 
 module.exports = mongoose.model('taiKhoan', taiKhoanSchema)
 
-module.exports.create({
-    email: "thanhhangdev@hotmail.com",
-    matKhau: "thanhhang",
-})
